@@ -40,10 +40,10 @@ import com.dollardays.pages.SearchPage;
 
 //Fetching UserName and Password from Excel Sheet and Displaying Here
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000); // Wait Time between two events	
+		Thread.sleep(1000); // Wait Time between two events	
 		
 //For Returning Customers Sign In Page Open
- 		Thread.sleep(2000);
+ 		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -51,37 +51,38 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();             //Favorites Module Opened
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 //Best Match Test Case #Start
 		
 //myFavoritesPage.getOption_SortByDropDown().sendKeys("Best Match");
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
-		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		//SBDdown.selectByVisibleText(datatable.get("Sort By"));
+		SBDdown.selectByIndex(0);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Best Match Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Best Match");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Best Match");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Best Match");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -96,13 +97,13 @@ import com.dollardays.pages.SearchPage;
 	{
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 9 : Verify Newest First Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 9 : Verify Newest First Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -110,7 +111,7 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
@@ -118,27 +119,27 @@ import com.dollardays.pages.SearchPage;
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
 		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Newest First Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Newest First");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Newest First");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Newest First");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -152,13 +153,13 @@ import com.dollardays.pages.SearchPage;
 		public void TC_10Popularity(Hashtable<String, String> datatable) throws Exception{
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 10 : Verify Popularity Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 10 : Verify Popularity Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		//RC's Sign In Drop Down List
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
@@ -167,7 +168,7 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
@@ -175,27 +176,27 @@ import com.dollardays.pages.SearchPage;
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
 		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Popularity Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Popularity");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Popularity");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Popularity");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -209,13 +210,13 @@ import com.dollardays.pages.SearchPage;
 		public void TC_11CaseQuantity(Hashtable<String, String> datatable) throws Exception{
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 11 : Verify Case Quantity Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 11 : Verify Case Quantity Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -223,7 +224,7 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
@@ -231,27 +232,27 @@ import com.dollardays.pages.SearchPage;
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
 		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Case Quantity Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Case Quantity");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Case Quantity");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Case Quantity");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -265,13 +266,13 @@ import com.dollardays.pages.SearchPage;
 		public void TC_12PricePerUnitLH(Hashtable<String, String> datatable) throws Exception{
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 12 : Verify Price Per Unit (Low to High) Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 12 : Verify Price Per Unit (Low to High) Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -279,35 +280,36 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
 //Price Per Unit (Low to High) Test Case #Start
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
-		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		//SBDdown.selectByVisibleText(datatable.get("Sort By"));
+		SBDdown.selectByIndex(4);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Price Per Unit (Low to High) Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Price Per Unit (Low to High)");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Price Per Unit (Low to High)");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Price Per Unit (Low to High)");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -320,13 +322,13 @@ import com.dollardays.pages.SearchPage;
 		public void TC_13PricePerUnitHL(Hashtable<String, String> datatable) throws Exception {
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 13 : Verify Price Per Unit (High to Low) Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 13 : Verify Price Per Unit (High to Low) Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -334,7 +336,7 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
@@ -342,27 +344,27 @@ import com.dollardays.pages.SearchPage;
 		//Select For selecting String or Index or Value from Drop Down List
 		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
 		SBDdown.selectByVisibleText(datatable.get("Sort By"));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Price Per Unit (High to Low) Sort Option Success");
 		
 //myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Price Per Unit (High to Low)");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Price Per Unit (High to Low)");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Price Per Unit (High to Low)");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -376,13 +378,13 @@ import com.dollardays.pages.SearchPage;
 		public void TC_14AlphabeticallyByName(Hashtable<String, String> datatable) throws Exception {
 			
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 14 : Verify Alphabetically By Name Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 14 : Verify Alphabetically By Name Functionality");
 		LoginPage loginPage = new LoginPage(driver);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
 		Thread.sleep(1000);
 		
@@ -390,29 +392,35 @@ import com.dollardays.pages.SearchPage;
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Login Dropdown Clicked");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : My Favorites Page Loaded Successfully");
 
 //AlphabeticallyByName Test Case #Start
+		//Select For selecting String or Index or Value from Drop Down List
+		Select SBDdown= new Select(myFavoritesPage.getOption_SortByDropDown());
+		SBDdown.selectByIndex(6);
+		Thread.sleep(1000);
+		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Alphabetically By Name Sort Option Success");
+
 		Select VDdown= new Select(myFavoritesPage.getOption_ItemViewDropDown());
 		VDdown.selectByIndex(0);
-		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : Alphabetically By Name Sort Option Success");
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : 12 Items are Displaying For Alphabetically By Name");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+
 //CODE FOR NEXT PAGE BUTTON
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6 : 12 Items :: Next Button click event");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		VDdown.selectByIndex(1);	
 		ExtentTestManager.getTest().log(Status.PASS, "Step 7  : 24 Items are Displaying For Alphabetically By Name");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 8 : 24 Items :: Next Button click event");		
 
 		VDdown.selectByIndex(2);	
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 9  : 48 Items are Displaying For Alphabetically By Name");
 		myFavoritesPage.clickNextPageButton();
 		ExtentTestManager.getTest().log(Status.PASS, "Step 10 : 48 Items :: Next Button click event");
@@ -427,16 +435,16 @@ import com.dollardays.pages.SearchPage;
 		
 					
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 1 : Verify Search Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 1 : Verify Search Functionality");
 		LoginPage loginPage = new LoginPage(driver);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
 		Thread.sleep(2000);
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
 //Calling Search Page
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		SearchPage searchpage = new SearchPage(driver);
 		searchpage.getSearchBar().sendKeys("Book");//Searching the Product - BOOK
 		Thread.sleep(1000);
@@ -446,44 +454,44 @@ import com.dollardays.pages.SearchPage;
 		searchpage.getsearchBtn().click();//Click the Search Button Icon
 		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : Clicked on the Search Button");
-		Thread.sleep(1500);
+		Thread.sleep(1000);
 
 //Retrieve First Product Display Link
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.getFirstProductDisplay().click();//Retrieve First Product Display
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : First Product Selected & Displayed");
 		
 //Click Favorite Symbol
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.getFavHeartSymbol().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 5  : Product Should Add OR Remove - Favorites Module");
 		
 // Saving the favorite SKU Id 
 		//SKUCode stores Selected Product's SKU
 		SKUCode = myFavoritesPage.getSelectedSKU().getAttribute("data-sku"); //data-sku denotes SKU's attribute
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 6  : Favorite Product Clicked  ::  SKU  :: " + SKUCode);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 //Traversing to Favorites page
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click(); //RC's Sign In Drop Down List
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		myFavoritesPage.getFavoritesPage().click(); //Favorites Page Opened
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 // Searching for the SKU which was chosen for favorite
 		searchpage.getSearchBar().sendKeys(SKUCode);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		searchpage.getsearchBtn().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 //Click on the product id link retrieved from search page
 		myFavoritesPage.getRetrievedProduct().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 					
 		//ExtentTestManager.getTest().log(Status.PASS, "Step 7 : PRODUCT Attribute ::   " + myFavoritesPage.getFavHeartSymbol().getAttribute("data-original-title"));
 				
@@ -504,30 +512,30 @@ import com.dollardays.pages.SearchPage;
 	{
 		boolean bIsProdFound  = false;
 //Calling LoginPage 
-		ExtentTestManager.getTest().log(Status.PASS, "Testcase 1 : Verify Favorite Symbol Functionality");
+		ExtentTestManager.getTest().log(Status.INFO, "Testcase 1 : Verify Favorite Symbol Functionality");
 		
 		LoginPage loginPage = new LoginPage(driver);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 1  : Login with Valid Credentials");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
-		Thread.sleep(2000);	
+		Thread.sleep(1000);	
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 2  : Returning Customers Sign In Page Opened");
 		loginPage.getUserDrodown().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 //Calling FavoritesPage
 		
 		ExtentTestManager.getTest().log(Status.PASS, "Step 3  : Favourites Page Opened ");
 		MyFavoritesPage myFavoritesPage = new MyFavoritesPage(driver);
 		myFavoritesPage.getFavoritesPage().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 //Displaying Best Match Option
 		
 		myFavoritesPage.getOption_ItemViewDropDown().sendKeys("12");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step 4  : 12 Items are Displaying For Best Match");
 
 //Display SkuCode
@@ -544,11 +552,11 @@ import com.dollardays.pages.SearchPage;
 		else
 			ExtentTestManager.getTest().log(Status.PASS, "Step 6.2 : Product with :" + SKUCode + " NOT Found in Favourites Page");
 			
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getUserDrodown().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		loginPage.getLogoutBtn().click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		ExtentTestManager.getTest().log(Status.PASS, "Step  7 : Clicked on LogOut");
  }
 }
