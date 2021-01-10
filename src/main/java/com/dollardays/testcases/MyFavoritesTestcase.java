@@ -27,7 +27,7 @@ import com.dollardays.pages.SearchPage;
 //For Sort By -> Best Match Option
 		
 //Fetching TestCase from Excel Sheet
-		@DDDataProvider(datafile = "testdata/MyFavorites.xlsx", sheetName = "Favorites",  testcaseID = "TC8", runmode = "Yes")
+		@DDDataProvider(datafile = "testdata/MyFavorites.xlsx", sheetName = "Favorites",  testcaseID = "", runmode = "Yes")
 		@Test(dataProvider = "dd-dataprovider", dataProviderClass = TestUtil.class)
 		public void TC_08BestMatch(Hashtable<String, String> datatable) throws Exception
 	{
