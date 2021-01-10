@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite (4)]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="com.dollardays.listners.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="My Wallet Test Case(failed)" verbose="0">
+    <classes>
+      <class name="com.dollardays.testcases.MyWalletTestcase">
+        <methods>
+          <include name="setAsDefault" invocation-numbers="0"/>
+          <include name="cancelWalletAdd" invocation-numbers="0"/>
+          <include name="editWallet" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="addWallet" invocation-numbers="0"/>
+          <include name="quit"/>
+          <include name="setUpBrowser"/>
+        </methods>
+      </class> <!-- com.dollardays.testcases.MyWalletTestcase -->
+    </classes>
+  </test> <!-- My Wallet Test Case(failed) -->
+</suite> <!-- Failed suite [Suite (4)] -->

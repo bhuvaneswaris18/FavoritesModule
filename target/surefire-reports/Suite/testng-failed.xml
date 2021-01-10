@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="com.dollardays.listners.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="Dollar Days Test(failed)" verbose="0">
+    <classes>
+      <class name="com.dollardays.testcases.MyFavoritesTestcase">
+        <methods>
+          <include name="afterClass"/>
+          <include name="TC_12PricePerUnitLH" invocation-numbers="0"/>
+          <include name="beforeClass"/>
+          <include name="quit"/>
+          <include name="TC_13PricePerUnitHL" invocation-numbers="0"/>
+          <include name="setUpBrowser"/>
+        </methods>
+      </class> <!-- com.dollardays.testcases.MyFavoritesTestcase -->
+    </classes>
+  </test> <!-- Dollar Days Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

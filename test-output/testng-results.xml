@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-01-07T15:31:42 EST" name="Suite" finished-at="2021-01-07T15:32:27 EST" duration-ms="45750">
+    <groups>
+    </groups>
+    <test started-at="2021-01-07T15:31:42 EST" name="Dollar Days Test" finished-at="2021-01-07T15:32:27 EST" duration-ms="45750">
+      <class name="com.dollardays.testcases.MyFavoritesTestcase">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.dollardays.testcases.MyFavoritesTestcase@385c9627]" started-at="2021-01-07T15:31:42 EST" name="beforeClass" finished-at="2021-01-07T15:31:42 EST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:com.dollardays.testcases.MyFavoritesTestcase@385c9627]" started-at="2021-01-07T15:31:43 EST" name="setUpBrowser" finished-at="2021-01-07T15:31:53 EST" duration-ms="10696" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="TC_08BestMatch(java.util.Hashtable)[pri:0, instance:com.dollardays.testcases.MyFavoritesTestcase@385c9627]" started-at="2021-01-07T15:31:53 EST" name="TC_08BestMatch" data-provider="dd-dataprovider" finished-at="2021-01-07T15:32:27 EST" duration-ms="33333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Test Result=PASS, TestCase=Sort By Best Match , Search=Best Match, Comments=, TCID=TC8, SheetName=Favorites, Runmode=No, UserName=testingteams2021@gmail.com, Password=dGVhbTIwMjE=}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_08BestMatch -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.dollardays.testcases.MyFavoritesTestcase@385c9627]" started-at="2021-01-07T15:32:27 EST" name="quit" finished-at="2021-01-07T15:32:27 EST" duration-ms="739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.dollardays.testcases.MyFavoritesTestcase@385c9627]" started-at="2021-01-07T15:32:27 EST" name="afterClass" finished-at="2021-01-07T15:32:27 EST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.dollardays.testcases.MyFavoritesTestcase -->
+    </test> <!-- Dollar Days Test -->
+  </suite> <!-- Suite -->
+</testng-results>
